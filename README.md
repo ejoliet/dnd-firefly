@@ -6,6 +6,17 @@ Programmatically Drag and Drop Files into Firefly Viewer
 
 `dnd_firefly` is a command-line tool that allows you to programmatically upload local files to the [Firefly Viewer](https://irsa.ipac.caltech.edu/irsaviewer/) (IRSA Viewer tool) by simulating a drag-and-drop action. This tool is particularly useful for automating data uploads and integrating with scripts or workflows that interact with the Firefly Viewer.
 
+### Firefly
+
+Firefly is an open-source web-based UI library for astronomical data archive access and visualization developed at [Caltech](https://caltech.edu).
+The development was started in the context of archive-specific applications at the [NASA/IPAC Infrared Science Archive (IRSA)](https://irsa.ipac.caltech.edu), and was then generalized to serve data from many different archives at IRSA (and beyond). It was open sourced in 2015, hosted at GitHub.
+
+See details in the GitHub [repository](https://github.com/Caltech-IPAC/firefly?tab=readme-ov-file#intro) and how to install [locally](https://github.com/Caltech-IPAC/firefly/blob/dev/docs/firefly-docker.md).
+
+### Compatibility
+
+`dnd_firefly` tool makes use of [IRSA Viewer](https://irsa.ipac.caltech.edu/irsaviewer/) and is compatible since release 2023.3 (Drag-ndrop introduced - [FIREFLY-1310](https://github.com/Caltech-IPAC/firefly/pull/1426).
+
 ## Features
 
 - **Automate File Uploads:** Upload files to the Firefly Viewer without manual intervention.
