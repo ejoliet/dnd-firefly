@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="dnd-firefly",
-    version="0.2.0",
+    version="0.3.0",
     packages=find_packages(),
     # install_requires=[
     #     "selenium",
@@ -12,7 +12,7 @@ setup(
     description="Programatically drag-and-drop in IRSA Viewer tool via Upload feature",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/ejoliet/firefly-vscode-extension.git",
+    url="https://github.com/ejoliet/dnd-firefly.git",
     install_requires=open("requirements.txt").read().splitlines(),
     classifiers=[
         "Programming Language :: Python :: 3",
