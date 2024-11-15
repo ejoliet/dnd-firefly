@@ -15,7 +15,7 @@ See details in the GitHub [repository](https://github.com/Caltech-IPAC/firefly?t
 
 ### Compatibility
 
-`dnd_firefly` tool makes use of [IRSA Viewer](https://irsa.ipac.caltech.edu/irsaviewer/) and is compatible since release 2023.3 (Drag-ndrop introduced - [FIREFLY-1310](https://github.com/Caltech-IPAC/firefly/pull/1426).
+`dnd_firefly` tool makes use of [IRSA Viewer](https://irsa.ipac.caltech.edu/irsaviewer/) and is compatible since release 2023.3 (Drag-n-drop introduced - [FIREFLY-1310](https://github.com/Caltech-IPAC/firefly/pull/1426).
 
 ## Features
 
@@ -30,6 +30,8 @@ You can install `dnd_firefly` directly from PyPI using `pip`:
 ```bash
 pip install dnd_firefly
 ```
+
+PyPi: https://pypi.org/project/dnd-firefly/
 
 **Note:** `dnd_firefly` requires Python **3.11** or higher.
 
@@ -92,10 +94,3 @@ Contributions are welcome! Please visit the [GitHub repository](https://github.c
 ## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
-## Author
-
-**Emmanuel Joliet**
-
-- Email: [ejoliet@caltech.edu](mailto:ejoliet@caltech.edu)
-- Affiliation: Caltech/IPAC
