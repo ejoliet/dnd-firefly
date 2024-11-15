@@ -22,7 +22,7 @@ setup(
     python_requires=">=3.11",  # Minimum Python version
     entry_points={
         "console_scripts": [
-            "dnd_firefly=firefly_demo.dnd_firefly:main",
+            "dnd_firefly=app.dnd_firefly:main",
         ],
     },
 )

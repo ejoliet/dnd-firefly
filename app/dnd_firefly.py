@@ -11,12 +11,32 @@ import time
 DEFAULT_FILE_PATH = "./file.fits"
 
 
+def main():
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(
+        description="Drag and drop file upload using Upload in IRSA Viewer tool"
+    )
+    parser.add_argument(
+        "file_path",
+        nargs="?",
+        default=DEFAULT_FILE_PATH,
+        help="The path to the file to be uploaded (default: $PWD/file.fits)",
+    )
+    args = parser.parse_args()
+
+    file_path = args.file_path
+
+    # Call your main functionality here, using file_path
+    # For example:
+    run_dnd_firefly(file_path)
+
+
 # # Parse command-line arguments
 # parser = argparse.ArgumentParser(description="Drag and drop file upload using Selenium")
 # parser.add_argument("file_path", help="The path to the file to be uploaded")
 # args = parser.parse_args()
 # Main function to handle drag-and-drop
-def main(file_path):
+def run_dnd_firefly(file_path):
     # Convert to absolute path
     absolute_file_path = os.path.abspath(file_path)
     options = ChromeOptions()
@@ -93,15 +113,4 @@ def main(file_path):
 
 
 if __name__ == "__main__":
-    # Parse command-line arguments
-    parser = argparse.ArgumentParser(
-        description="Drag and drop file upload using Upload in IRSA Viewer tool"
-    )
-    parser.add_argument(
-        "file_path",
-        nargs="?",
-        default=DEFAULT_FILE_PATH,
-        help="The path to the file to be uploaded (default: $PWD/file.fits)",
-    )
-    args = parser.parse_args()
-    main(args.file_path)
+    main()
