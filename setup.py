@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="dnd-firefly",
-    version="0.4.0",
+    version="0.4.1",
     packages=find_packages(),
     keywords = ["firefly","visualization", "astronomy","images", "tables","fits", "parquet", "votable", "csv", "tsv"],
     author="Emmanuel Joliet",
