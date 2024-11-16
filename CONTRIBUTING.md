@@ -2,23 +2,23 @@
 
 ## Reqs
 
-Make an environment, install deps:
+Make an environment, install deps or update existing `requirements.txt` file:
 
 ```bash
-pip install dist wheel selenium
+pip install -r requirements.txt 
 ```
 
 ## Build the Package:
-Run the following command to build the package.
+Run the following command to build the package, update version in `setup.py` before published to pypi.
 
 ```bash
-python setup.py sdist bdist_wheel
+python -m build
 ```
 ## Install the Package:
 
 Install the package on macOS or Windows.
 ```bash
-pip install dist/your_package-0.1-py3-none-any.whl
+pip install dist/dnd_firefly-0.4.0-py3-none-any.whl
 ```
 
 ## Run
@@ -26,5 +26,5 @@ pip install dist/your_package-0.1-py3-none-any.whl
 Example:
 
 ```bash
-python firefly_demo/dnd_firefly.py ~/Downloads/WISE-allwise_p3as_psd-Cone_100asec.tbl
+python dnd_firefly.py ~/Downloads/WISE-allwise_p3as_psd-Cone_100asec.tbl
 ```
