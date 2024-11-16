@@ -1,10 +1,12 @@
 # dnd_firefly
 
-Programmatically Drag and Drop Files into Firefly Viewer
+Programmatically load file either drag-and-drop or via URL into Firefly Viewer
 
 ## Overview
 
-`dnd_firefly` is a command-line tool that allows you to programmatically upload local files to the [Firefly Viewer](https://irsa.ipac.caltech.edu/irsaviewer/) (IRSA Viewer tool) by simulating a drag-and-drop action. This tool is particularly useful for automating data uploads and integrating with scripts or workflows that interact with the Firefly Viewer.
+`dnd_firefly` is a command-line tool that allows you to programmatically upload local files to the [Firefly Viewer](https://irsa.ipac.caltech.edu/irsaviewer/) (IRSA Viewer tool) by simulating a drag-and-drop action or loading from a URL. 
+
+This tool is particularly useful for automating data uploads and integrating with scripts or workflows that interact with the Firefly Viewer. This tools complements the existing [URL API](https://irsa.ipac.caltech.edu/irsaviewer/?api) by enabling support for the Upload feature in scenarios where direct access is not yet available.
 
 ### Firefly
 
@@ -20,7 +22,7 @@ See details in the GitHub [repository](https://github.com/Caltech-IPAC/firefly?t
 ## Features
 
 - **Automate File Uploads:** Upload files to the Firefly Viewer without manual intervention.
-- **Simulate Drag-and-Drop:** Programmatically simulate the drag-and-drop action to upload files.
+- **Simulate Drag-and-Drop:** Programmatically simulate the drag-and-drop action to upload local files or from URL.
 - **Easy Integration:** Integrate seamlessly with existing data processing pipelines or scripts.
 
 ## Installation
@@ -42,21 +44,29 @@ PyPi: https://pypi.org/project/dnd-firefly/
 
 ## How It Works
 
-The tool uses **Selenium WebDriver** to automate a Chrome browser session. It opens the Firefly Viewer and simulates the drag-and-drop action to upload your specified file.
+The tool uses **Selenium WebDriver** to automate a Chrome browser session. It opens the Firefly Viewer and simulates the drag-and-drop action to upload your specified file or load from URL.
 
 **Selenium Manager:** Starting from Selenium 4.6.0, Selenium includes Selenium Manager, which automatically manages the browser driver required for automation. If you have Chrome installed, Selenium will handle the rest.
 
 ## Usage
 
-The `dnd_firefly` tool accepts one argument: the path to the local file you want to upload to the Firefly Viewer.
+The `dnd_firefly` tool accepts one argument: the path to the local file or URL you want to upload to the Firefly Viewer.
 
 ### Command-Line Usage
 
+For local files:
 ```bash
 dnd_firefly /path/to/your/file.tbl
 ```
-
 **Replace** `/path/to/your/file.tbl` with the actual path to your local file.
+
+For URL:
+
+```bash
+dnd_firefly <http|https>://.../file.tbl
+```
+**Replace** `<http|https>://.../file.tbl` with the URL.
+
 
 ### Example
 
@@ -65,12 +75,17 @@ To upload a file named `WISE-allwise_p3as_psd-Cone_100asec.tbl` located in your 
 ```bash
 dnd_firefly ~/Downloads/WISE-allwise_p3as_psd-Cone_100asec.tbl
 ```
+Example of VOTable with 2 tables via URL:
+
+```bash
+dnd_firefly https://raw.githubusercontent.com/ejoliet/playground/refs/heads/master/data/table_IRS_Enh-Spectra-1.vot
+```
 
 ## Troubleshooting
 
 - **Selenium Exceptions:** If you encounter errors related to Selenium WebDriver, ensure that you have the latest version of Chrome installed and that your Selenium version is up to date.
 - **Internet Access:** Selenium Manager requires internet access to download the appropriate WebDriver. If you're in an environment with restricted internet access, you may need to manually set up the WebDriver. Refer to the [Selenium documentation](https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/selenium_manager/) for more details.
-- **File Path Issues:** Ensure that the file path you provide is correct and that the file exists.
+- **File Path / URL Issues:** Ensure that the file path or URL you provide is correct and that the file exists.
 
 ## Advanced Usage (Optional)
 
@@ -89,8 +104,4 @@ If you need to use a different browser or have specific requirements, you can ma
 
 ## Contributing
 
-Contributions are welcome! Please visit the [GitHub repository](https://github.com/ejoliet/firefly-vscode-extension.git) to report issues or submit pull requests.
-
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+Contributions are welcome! Please visit the [GitHub repository](https://github.com/ejoliet/dnd-firefly.git) to report issues or submit pull requests.
